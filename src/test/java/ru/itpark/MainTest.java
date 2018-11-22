@@ -14,7 +14,7 @@ class MainTest {
         CardService service = new CardService(new CardRepository());
 
 
-        service.add("\r Tinkoff Black Platinum",
+         service.add("\r Tinkoff Black Platinum",
                 "Тинькофф Банк",
                 " Visa Platinum"+"\n",
                 " да",

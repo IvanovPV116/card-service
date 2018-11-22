@@ -109,8 +109,8 @@ public class Main {
 
         service.add(
                 "\rМаксимальный доход - Банки.ру",
-                "Локо-Банк, Mastercard Platinum"+"\n",
-                "Visa Platinum",
+                "Локо-Банк",
+                "Visa Platinum, Mastercard Platinum\"+\"\\n",
                 "да",
                 "да",
                 "Нет",
