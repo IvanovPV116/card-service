@@ -30,11 +30,11 @@ class MainTest {
         List<Card> name = service.findAllByBankName("Тинькофф Банк");
         System.out.println(name);
     }
-//    {
-//        CardService service = new CardService(new CardRepository());
-//        List<Card> bankName = service.findAllByBankName("Восточный Банк");
-//        System.out.println(bankName);
-//    }
+    {
+        CardService service = new CardService(new CardRepository());
+        List<Card> bankName = service.findAllByBankName("Восточный Банк");
+        System.out.println(bankName);
+    }
 //    {
 //        CardService service = new CardService();
 //        List<Card> cardCategory = service.findAllByCardCategory("мир");
