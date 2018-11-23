@@ -1,6 +1,6 @@
 package ru.itpark;
 
-import ru.itpark.data.CardData;
+
 import ru.itpark.domain.Card;
 import ru.itpark.repository.CardRepository;
 import ru.itpark.service.CardService;
@@ -9,191 +9,62 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        CardData data = new CardData();
-//        CardRepository repository = new CardRepository();
-//        CardService service = new CardService(repository);
-//
-//        service.add(
-//                "\r Tinkoff Black Platinum",
-//                " Тинькофф Банк",
-//                " Visa Platinum"+"\n",
-//                " да",
-//                " да",
-//                " Нет",
-//                " да",
-//                " Руб",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет",
-//                " нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\r Польза",
-//                " Хоум Кредит Банк",
-//                " Visa Platinum"+"\n",
-//                " да",
-//                " да",
-//                " да",
-//                " нет",
-//                " Руб",
-//                " да",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\r Мультикарта",
-//                " ВТБ",
-//                " Visa Gold" + "Mastercard World" + "Мир Премиальная"+"\n",
-//                " да",
-//                " да",
-//                " да",
-//                " да",
-//                " Руб",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет",
-//                " нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\r Generation",
-//                " Ак Барс",
-//                " Mastercard World"+"\n",
-//                " да",
-//                " да",
-//                " Нет",
-//                " да",
-//                " Руб",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет",
-//                " да"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\rКарта номер один",
-//                " Восточный Банк",
-//                " Visa Classic"+"\n",
-//                " да",
-//                " да",
-//                " Нет",
-//                " да",
-//                " Руб",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет",
-//                " нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\rCard Plus",
-//                "Кредит Европа Банк",
-//                "Mastercard World"+"\n",
-//                "да",
-//                "да",
-//                "Нет",
-//                "да",
-//                "Руб",
-//                "да",
-//                "нет",
-//                "нет",
-//                "нет",
-//                "нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\rМаксимальный доход - Банки.ру",
-//                "Локо-Банк",
-//                "Visa Platinum, Mastercard Platinum\"+\"\\n",
-//                "да",
-//                "да",
-//                "Нет",
-//                "да",
-//                "Руб",
-//                "да",
-//                "нет",
-//                "нет",
-//                "нет",
-//                "нет"+"\n"+"\n"
-//        );
-//
-//        service.add(
-//                "\rТвой ПСБ",
-//                "Восточный Банк",
-//                "Mastercard Gold, Мир Классическая"+"\n",
-//                "да",
-//                "да",
-//                "Нет",
-//                "да",
-//                "Руб",
-//                "да",
-//                "нет",
-//                "нет",
-//                "нет",
-//                "нет"
-//        );
 
+        CardRepository repository = new CardRepository();
+        CardService service = new CardService(repository);
+        System.out.println("Поиск:");
 
+        System.out.println("\n \n-Результаты поиска по - Название Карты': \n");
+        List<Card> name = service.findAllByName("Польза");
+        System.out.println(service);
 
-
-        List<Card> name = name.findAllByName("0");
-        System.out.println(name);
-
-
-        List<Card> bankName = name.findAllByBankName("Восточный Банк");
+        System.out.println(" \n \n-Результаты поиска по - Название Банака: \n");
+        List<Card> bankName = service.findAllByBankName("втб");
         System.out.println(bankName);
 
-
-        List<Card> cardCategory = name.findAllByCardCategory("мир");
+        System.out.println(" \n \n-Результаты поиска по - Категория карты: \n");
+        List<Card> cardCategory = service.findAllByCardCategory("0");
         System.out.println(cardCategory);
 
-
-        List<Card> percentOnBalance = name.findAllByPercentOnBalance("0");
+        System.out.println(" \n \n-Результаты поиска по - Проценты на остаток: \n");
+        List<Card> percentOnBalance = service.findAllByPercentOnBalance("0");
         System.out.println(percentOnBalance);
 
-
-        List<Card> priceOfService = name.findAllByPriceOfService("0");
+        System.out.println(" \n \n-Результаты поиска по - Бесплатное обслуживание: \n");
+        List<Card> priceOfService = service.findAllByPriceOfService("0");
         System.out.println(priceOfService);
 
-
-        List<Card> bonus = name.findAllByBonus("0");
+        System.out.println(" \n \n-Результаты поиска по - Бонусы и скидки: \n");
+        List<Card> bonus = service.findAllByBonus("0");
         System.out.println(bonus);
 
-
-        List<Card> cashBack = name.findAllByCashBack("0");
+        System.out.println(" \n \n-Результаты поиска по - CashBack: \n");
+        List<Card> cashBack = service.findAllByCashBack("0");
         System.out.println(cashBack);
 
-
-        List<Card> currency = name.findAllByCurrency("0");
+        System.out.println(" \n \n-Результаты поиска по - Валюта: \n");
+        List<Card> currency = service.findAllByCurrency("0");
         System.out.println(currency);
 
-
-        List<Card> contactless = name.findAllByContactless("0");
+        System.out.println(" \n \n-Результаты поиска по - Бесконтактная оплата: \n");
+        List<Card> contactless = service.findAllByContactless("0");
         System.out.println(contactless);
 
-
-        List<Card> cashCommission = name.findAllByCashCommission("0");
+        System.out.println(" \n \n-Результаты поиска по - комиссия за снятие: \n");
+        List<Card> cashCommission = service.findAllByCashCommission("0");
         System.out.println(cashCommission);
 
-
-        List<Card> instantRelease = name.findAllByInstantRelease("0");
+        System.out.println(" \n \n-Результаты поиска по - моментальный выпуск: \n");
+        List<Card> instantRelease = service.findAllByInstantRelease("0");
         System.out.println(instantRelease);
 
-        List<Card> prepaidCard = name.findAllByPrepaidCard("0");
+        System.out.println(" \n \n-Результаты поиска по - Предоплаченная карта: \n");
+        List<Card> prepaidCard = service.findAllByPrepaidCard("0");
         System.out.println(prepaidCard);
 
-
-        List<Card> publicTransport = name.findAllByPublicTransport("0");
-        System.out.println(publicTransport);
-
+        System.out.println(" \n \n-Результаты поиска по - Оплата общественного транспорта: \n");
+        List<Card> publicTransport = service.findAllByPublicTransport("да");
+        System.out.println(publicTransport + "\n");
 
     }
 }

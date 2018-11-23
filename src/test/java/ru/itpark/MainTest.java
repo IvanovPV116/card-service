@@ -9,37 +9,24 @@ import java.util.List;
 
 class MainTest {
 
-    @org.junit.jupiter.api.Test
-    void main() {
-        CardService service = new CardService(new CardRepository());
-        Main main = new Main();
-
+//    @org.junit.jupiter.api.Test
+//    void main() {
+//        CardService service = new CardService(new CardRepository());
+//        Main main = new Main();
 //
-//         service.add("\r Tinkoff Black Platinum",
-//                "Тинькофф Банк",
-//                " Visa Platinum"+"\n",
-//                " да",
-//                " да",
-//                " Нет",
-//                " да",
-//                " Руб",
-//                " да",
-//                " нет",
-//                " нет",
-//                " нет",
-//                " нет");
-        List<Card> name = service.findAllByBankName("Тинькофф Банк");
-        System.out.println(name);
-    }
-    {
-        CardService service = new CardService(new CardRepository());
-        List<Card> bankName = service.findAllByBankName("Восточный Банк");
-        System.out.println(bankName);
-    }
-
+//
+//        List<Card> name = service.findAllByBankName("Тинькофф Банк");
+//        System.out.println(name);
+//    }
+//    {
+//        CardService service = new CardService(new CardRepository());
+//        List<Card> bankName = service.findAllByBankName("Восточный Банк");
+//        System.out.println(bankName);
+//    }
+//
 //    {
 //        CardService service = new CardService();
-//        List<Card> cardCategory = service.findAllByCardCategory("мир");
+//        List<Card> cardCategory = service.findAllByCardCategory("0");
 //        System.out.println(cardCategory);
 //    }
 //    {

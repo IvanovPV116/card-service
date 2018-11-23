@@ -32,7 +32,7 @@ public class Card {
                 String instantRelease,
                 String prepaidCard,
                 String publicTransport) {
-        this.id = id;
+       this.id = id;
         this.name = name;
         this.bankName = bankName;
         this.cardCategory = cardCategory;
@@ -48,21 +48,13 @@ public class Card {
         this.publicTransport = publicTransport;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id;}
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name;}
 
-    public String getBankName() {
-        return bankName;
-    }
+    public String getBankName() { return bankName;}
 
-    public String getCardCategory() {
-        return cardCategory;
-    }
+    public String getCardCategory() { return cardCategory;}
 
     public String getPercentOnBalance() { return percentOnBalance;}
 
