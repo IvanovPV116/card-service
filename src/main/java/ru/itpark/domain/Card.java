@@ -1,7 +1,5 @@
 package ru.itpark.domain;
 
-import java.net.PortUnreachableException;
-
 public class Card {
     private int id;
     private String name;
